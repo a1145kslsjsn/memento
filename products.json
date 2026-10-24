@@ -1,3 +1,17 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "p1792855538130",
+      "title": "MEMENTO 연결 테스트",
+      "artist": "MEMENTO",
+      "genre": "MP3",
+      "format": "MP3",
+      "description": "MEMENTO 시스템 연결 확인용 테스트 상품입니다. 실제 배포용 음악이 아닙니다.",
+      "condition": "무료 신청",
+      "youtube": "",
+      "variant": 0,
+      "public": true,
+      "featured": false
+    }
+  ]
 }
