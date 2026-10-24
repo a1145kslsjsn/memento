@@ -58,7 +58,22 @@ async function saveProduct(e){e.preventDefault();const f=new FormData(e.target),
 function deleteProduct(id){if(!confirm('이 굿즈를 목록에서 삭제할까?'))return;products=products.filter(p=>p.id!==id);save();admin('products');toast('삭제했어.')}
 function previewNotice(){toast('오디오 파일 연결은 다음 단계에서 구현할 거야.')}function toast(t){document.querySelector('.toast')?.remove();const x=document.createElement('div');x.className='toast';x.textContent=t;document.body.append(x);setTimeout(()=>x.remove(),3500)}
 const route=()=>{const h=location.hash.replace('#','');if(h==='store'||h==='about'||h==='admin')state.page=h};window.addEventListener('hashchange',route);route();render();
+async function loadProducts() {
+  try {
+    const response = await fetch('./products.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('상품 데이터를 불러올 수 없어');
+    const data = await response.json();
+    if (!Array.isArray(data.products)) throw new Error('상품 데이터 형식 오류');
 
+    if (data.products.length > 0) {
+      products = data.products;
+      render();
+    }
+  } catch (error) {
+    console.error('MEMENTO 상품 불러오기 실패:', error);
+  }
+}
+loadProducts();
 </script>
 </body>
 </html>
