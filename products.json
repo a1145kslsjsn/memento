@@ -9,6 +9,7 @@
       "description": "MEMENTO 상품 수정 기능을 확인하기 위한 테스트 상품입니다.",
       "condition": "무료 신청",
       "youtube": "",
+      "coverImage": "https://memento-51b.pages.dev/images/8c4438ab-329c-4356-9e2c-b8ec6f8e3153.jpg",
       "variant": 0,
       "public": true,
       "featured": false
